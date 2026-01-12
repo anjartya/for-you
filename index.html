@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Ulang Tahun Mas Sayang 💗</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --primary: #ff5f8a;
+      --secondary: #ffd6e4;
+      --text: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, var(--secondary), #fff1f6);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      animation: fadeDown 1.2s ease;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      animation: fadeUp 1.6s ease;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 14px 34px;
+      border: none;
+      border-radius: 30px;
+      background: var(--primary);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #ff3f73;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 35px;
+      border-radius: 22px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+      font-size: 1.15rem;
+      line-height: 1.9;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .from {
+      margin-top: 30px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      font-size: 18px;
+      animation: fall linear infinite;
+      color: var(--primary);
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- AUDIO -->
+  <iframe
+    id="music"
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/gvunApwKIiY?autoplay=1&mute=1&loop=1&playlist=gvunApwKIiY"
+    allow="autoplay"
+  ></iframe>
+
+  <!-- HALAMAN 1 -->
+  <header>
+    <h1>Selamat Ulang Tahun Mas Sayang 🎉</h1>
+    <p>Today is all about you 🤍</p>
+
+    <button class="btn" onclick="aktifkanSuara()">
+      Aktifkan Lagu 🎶
+    </button>
+
+    <button class="btn" onclick="document.getElementById('slide1').scrollIntoView({behavior:'smooth'})">
+      Buka Pesan Spesial 💌
+    </button>
+  </header>
+
+  <!-- SLIDE 1 -->
+  <section id="slide1">
+    <div class="card">
+      <p>
+        Selamat ulang tahun ke-26 mas sayang! it's your special dayy,
+        wish u all the bestt sayang.
+        Selamat bertumbuh jauh lebih baik mas sayangku cintaaku,
+        panjang umur, sehat sehatt mas.
+      </p>
+
+      <p>
+        Semoga hal baik selalu beriringan denganmu,
+        semoga semesta selalu berpihak sama kamu mas,
+        semoga jalanmu selalu dipermudahkan, aamiin.
+      </p>
+
+      <p>
+        Teruslah melangkah & berbahagia,
+        aku akan selalu bangga atas setiap proses yang kamu lalui,
+        sayangg mas banyak banyakk.
+        i will always support u!! 💐💐💗💗
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE 2 (TEKS BARU KAMU) -->
+  <section id="slide2">
+    <div class="card">
+      <p>
+        aku harap mas berhasil mencapai semua impian
+        dan dilancarkan segala urusan.
+      </p>
+
+      <p>
+        semoga semesta selalu memberi mas kemudahan
+        atas semua usahamu,
+        semoga doamu terkabulkan satu persatu.
+      </p>
+
+      <p>
+        semoga pundakmu dikuatkan,
+        hatimu dilapangkan,
+        semoga selalu dikelilingi orang baik,
+        dan semoga selalu sayanggg aku 💗
+      </p>
+
+      <div class="from">
+        from: ur love 💗💗
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Dibuat khusus untuk hari spesialmu ✨
+  </footer>
+
+  <script>
+    function aktifkanSuara() {
+      const iframe = document.getElementById('music');
+      iframe.src = iframe.src.replace("mute=1", "mute=0");
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '💗';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (3 + Math.random() * 5) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+
+    setInterval(createHeart, 450);
+  </script>
+
+</body>
+</html>
